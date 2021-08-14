@@ -1,4 +1,5 @@
 // TODO: Include packages needed for this application
+const fs = require('fs');
 const inquirer = require('inquirer');
 // const generateReadme = require('./src/readme');
 
@@ -47,25 +48,23 @@ const questions = () => {
     ]);
 };
 
-questions();
-
 // TODO: Create a function to write README file
+function writeToFile(filename, data){
+fs.writeFile('./dist/README.md', questions, err => {
+    if (err) {
+        console.log(err);
+        return;
+    }
+    console.log('Page created! Checkout out index.html in this directory to see it!');
 
-// function writeToFile(generateReadme, data) {
-//     fs.writeFile(generateReadme, data, err => {
-//         if (err) {
-//             console.log(err);
-//             return;
-//         }
-//         console.log('Page created!');
-//     });
-// }
+});
+};
 
-// // TODO: Create a function to initialize app
-// function init() {}
+// TODO: Create a function to initialize app
+function init() {};
 
-// // Function call to initialize app
-// init();
+// Function call to initialize app
+init();
 
 
 
