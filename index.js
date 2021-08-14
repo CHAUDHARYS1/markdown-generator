@@ -1,6 +1,6 @@
-// TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+const generatePage = require('./src/page-template');
 // const generateReadme = require('./src/readme');
 
 // TODO: Create an array of questions for user input
@@ -47,10 +47,13 @@ const questions = () => {
         }
     ]);
 };
+const [github, email, description, license, dependencies, tests, usingRepo, contributeRepo] = questions;
+
+const pageMD = generatePage(github, email, description, license, dependencies, tests, usingRepo, contributeRepo);
 
 // TODO: Create a function to write README file
-function writeToFile(filename, data){
-fs.writeFile('./dist/README.md', questions, err => {
+// function writeToFile(filename, data){
+fs.writeFile('./dist/README.md', pageMD, err => {
     if (err) {
         console.log(err);
         return;
@@ -58,7 +61,7 @@ fs.writeFile('./dist/README.md', questions, err => {
     console.log('Page created! Checkout out index.html in this directory to see it!');
 
 });
-};
+// };
 
 // TODO: Create a function to initialize app
 function init() {};
