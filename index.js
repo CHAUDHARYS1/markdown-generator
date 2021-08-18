@@ -1,6 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generatePage = require('./src/page-template');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 // const generateReadme = require('./src/readme');
 
 // TODO: Create an array of questions for user input
@@ -47,47 +47,30 @@ const questions = () => {
         }
     ]);
 };
-const [github, email, description, license, dependencies, tests, usingRepo, contributeRepo] = questions;
+// const [github, email, description, license, dependencies, tests, usingRepo, contributeRepo] = questions;
 
-const pageMD = generatePage(github, email, description, license, dependencies, tests, usingRepo, contributeRepo);
+// const pageMD = generatePage(github, email, description, license, dependencies, tests, usingRepo, contributeRepo);
 
 // TODO: Create a function to write README file
-// function writeToFile(filename, data){
-fs.writeFile('./dist/README.md', pageMD, err => {
-    if (err) {
-        console.log(err);
-        return;
-    }
-    console.log('Page created! Checkout out index.html in this directory to see it!');
+function writeToFile(data) {
+    fs.writeFile('./dist/README.md', generateMarkdown(data), err => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log('Page created! Checkout out readme.md in this directory to see it!');
 
-});
-// };
+    });
+};
 
 // TODO: Create a function to initialize app
-function init() {};
+function init() {
+    questions().then((data) => {
+        writeToFile(data);
+        // console.log(data);
+    });
+};
 
 // Function call to initialize app
 init();
 
-
-
-
-
-// const pageHTML = generatePage(portfolioData);
-
-//     fs.writeFile('./dist/index.html', pageHTML, err => {
-//         if (err) {
-//             console.log(err);
-//             return;
-//         }
-//         console.log('Page created! Checkout out index.html in this directory to see it!');
-
-//         fs.copyFile('./src/style.css', './dist/style.css', err => {
-//             if (err) {
-//                 console.log(err);
-//                 return;
-//             }
-//             console.log('Style sheet copied successfully!')
-//         });
-//     });
-// });
