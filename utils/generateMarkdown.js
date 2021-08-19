@@ -28,9 +28,12 @@ function generateMarkdown(data) {
 
   ### License
   ${data.license}
-  
+
   ### Features
   ${data.features}
+
+  ### Language
+  ${data.language}
 `;
 }
 

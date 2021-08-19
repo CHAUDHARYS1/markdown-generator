@@ -39,6 +39,11 @@ const questions = () => {
             type: 'input',
             name: 'features',
             message: 'if your project has alot of features, list them out here:'
+        },
+        {
+            type: 'input',
+            name: 'language',
+            message: 'list language used to create the application:'
         }
     ]);
 };
