@@ -7,13 +7,8 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 const questions = () => {
     return inquirer.prompt([{
             type: 'input',
-            name: 'github',
-            message: 'What is your GutHub username?'
-        },
-        {
-            type: 'input',
-            name: 'email',
-            message: 'What is your email address?'
+            name: 'projectTitle',
+            message: 'What is your project title?'
         },
         {
             type: 'input',
@@ -22,28 +17,28 @@ const questions = () => {
         },
         {
             type: 'input',
+            name: 'installation',
+            message: 'What are the steps required to install your project?'
+        },
+        {
+            type: 'input',
+            name: 'usage',
+            message: 'Provide instructions and examples for use:'
+        },
+        {
+            type: 'input',
+            name: 'Credits',
+            message: 'List your collaborators:'
+        },
+        {
+            type: 'input',
             name: 'license',
-            message: 'What kind of license should you project have?'
+            message: 'What kind of license does your project have?'
         },
         {
             type: 'input',
-            name: 'dependencies',
-            message: 'What command should be run to install dependencies'
-        },
-        {
-            type: 'input',
-            name: 'tests',
-            message: 'What command should be run to run tests?'
-        },
-        {
-            type: 'input',
-            name: 'usingRepo',
-            message: 'What does the user need to know about using the repo?'
-        },
-        {
-            type: 'input',
-            name: 'contributeRepo',
-            message: 'What does the user need to know about contributing to the repo?'
+            name: 'features',
+            message: 'if your project has alot of features, list them out here:'
         }
     ]);
 };
