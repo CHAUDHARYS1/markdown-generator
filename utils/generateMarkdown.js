@@ -1,6 +1,15 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  var licenseUrl = "https://img.shields.io/badge/license-" + licenseType +"blue";
+  var licenseType = license.license;
+  // https://img.shields.io/badge/license-mit-coral
+  if (licenseType === "" || licenseType === null){
+      return ``;
+  } else{
+      
+  }
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -14,26 +23,32 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   return `
   # ${data.projectTitle}
-  ### Description
+  ## Description
   ${data.description}
   
-  ### Installation
+  ## Installation
   ${data.installation}
 
-  ### Usage
+  ## Usage
   ${data.usage}
 
-  ### Credits
+  ## Credits
   ${data.credits}
 
-  ### License
+  ## License
   ${data.license}
 
-  ### Features
+  ## Features
   ${data.features}
 
   ### Language
   ${data.language}
+
+  ## Tests
+  ${data.tests}
+
+  ## Questions
+  ${data.questions}
 `;
 }
 

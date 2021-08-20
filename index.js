@@ -1,6 +1,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
+
 // const generateReadme = require('./src/readme');
 
 // TODO: Create an array of questions for user input
@@ -44,6 +45,16 @@ const questions = () => {
             type: 'input',
             name: 'language',
             message: 'list language used to create the application:'
+        },
+        {
+            type: 'input',
+            name: 'tests',
+            message: 'did you do any testing?'
+        },
+        {
+            type: 'input',
+            name: 'questions',
+            message: 'list of questions:'
         }
     ]);
 };

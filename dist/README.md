@@ -1,19 +1,28 @@
 
-  # Weather Application
+  # Book Lovers
   ### Description
-  Weather Application that shows users Temp, Wind, Humidity, UV Index based on user search. Users can search the desired city and 5-day forecast will be displayed. Great application to use to plan trips.
+  Application about book searches and collect
   
   ### Installation
-  
+  1) Search for any book 2) Select a book 3) Add selected book to favorites
 
   ### Usage
-  https://chaudharys1.github.io/weather-app/
+  Saving book to favorites for later
 
   ### Credits
   undefined
 
   ### License
-  n/a
-  
+  MIT
+
   ### Features
   
+
+  ### Language
+  HTML, CSS, JAVASCRIPT, BOOTSTRAP
+
+  ### Tests
+  no
+
+  ### Questions
+  n/a
